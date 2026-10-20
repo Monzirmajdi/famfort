@@ -114,13 +114,11 @@ h1 em { color: var(--blue); font-style: normal; }
   width: min(360px, 100%);
   aspect-ratio: 1;
   margin-left: auto;
-  border: 1px solid rgba(35, 100, 170, .32);
-  background: rgba(255,255,255,.18);
   animation: reveal .9s .15s ease both;
 }
-.hero-mark::after { position: absolute; inset: 0; content: ''; pointer-events: none; background: linear-gradient(135deg, rgba(244,240,232,.25), transparent 35%, rgba(35,100,170,.05)); }
+.hero-mark::after { display: none; }
 #icon-canvas { display: block; width: 100%; height: 100%; }
-.model-caption { position: absolute; z-index: 2; right: 18px; bottom: 15px; color: var(--blue); font-size: .55rem; font-weight: 700; letter-spacing: .16em; }
+.model-caption { display: none; }
 
 .contact-section {
   display: grid;

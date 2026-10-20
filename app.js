@@ -89,8 +89,8 @@ if (canvas) {
   const render = () => {
     const elapsed = clock.getElapsedTime();
     if (model) {
-      model.rotation.z += reducedMotion ? 0 : 0.0028;
-      model.rotation.y += (targetRotationY - model.rotation.y) * 0.035;
+      // الدوران حول المحور الطولي للمجسم: Y هو المحور الرأسي بعد ضبط الوضع الأمامي.
+      model.rotation.y = reducedMotion ? 0 : elapsed * 0.72 + targetRotationY * 0.35;
       model.rotation.x = baseRotationX + targetRotationX;
       model.position.y = reducedMotion ? 0 : Math.sin(elapsed * 1.15) * 0.04;
     }
