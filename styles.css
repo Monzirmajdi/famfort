@@ -110,6 +110,7 @@ h1 em { color: var(--blue); font-style: normal; }
 
 .hero-mark {
   position: relative;
+  overflow: hidden;
   width: min(360px, 100%);
   aspect-ratio: 1;
   margin-left: auto;
@@ -117,15 +118,9 @@ h1 em { color: var(--blue); font-style: normal; }
   background: rgba(255,255,255,.18);
   animation: reveal .9s .15s ease both;
 }
-.hero-mark::before, .hero-mark::after { position: absolute; content: ''; background: var(--blue); }
-.hero-mark::before { top: 50%; left: 7%; width: 86%; height: 1px; }
-.hero-mark::after { top: 7%; left: 50%; width: 1px; height: 86%; }
-.mark-ring { position: absolute; inset: 17%; border: 1px solid rgba(35,100,170,.55); border-radius: 50%; }
-.mark-ring-two { inset: 30%; border-color: var(--blue); }
-.mark-cross { position: absolute; z-index: 2; width: 22%; height: 22%; border: 1px solid var(--blue); background: var(--ivory); transform: rotate(45deg); }
-.mark-cross-one { top: 39%; left: 39%; }
-.mark-cross-two { display: none; }
-.mark-center { position: absolute; z-index: 3; inset: 46%; background: var(--blue); }
+.hero-mark::after { position: absolute; inset: 0; content: ''; pointer-events: none; background: linear-gradient(135deg, rgba(244,240,232,.25), transparent 35%, rgba(35,100,170,.05)); }
+#icon-canvas { display: block; width: 100%; height: 100%; }
+.model-caption { position: absolute; z-index: 2; right: 18px; bottom: 15px; color: var(--blue); font-size: .55rem; font-weight: 700; letter-spacing: .16em; }
 
 .contact-section {
   display: grid;
@@ -179,14 +174,9 @@ a.contact-item:hover .contact-arrow { transform: translate(3px, -3px); }
   width: 33px;
   height: 100vh;
   opacity: .8;
-  background: linear-gradient(135deg, transparent 39%, var(--blue) 40%, var(--blue) 46%, transparent 47%, transparent 53%, var(--blue) 54%, var(--blue) 60%, transparent 61%) 0 0 / 33px 39px repeat-y;
-}
-.geometric-rail::after {
-  position: absolute;
-  inset: 0;
-  content: '';
-  border-left: 1px solid rgba(35,100,170,.2);
-  background: linear-gradient(90deg, rgba(244,240,232,0), rgba(244,240,232,.75));
+  object-fit: cover;
+  object-position: center;
+  mix-blend-mode: multiply;
 }
 
 @keyframes reveal { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
@@ -199,6 +189,7 @@ a.contact-item:hover .contact-arrow { transform: translate(3px, -3px); }
   h1 { font-size: clamp(3.2rem, 15vw, 5rem); }
   .hero-intro { max-width: 390px; font-size: .92rem; }
   .hero-mark { width: min(230px, 65vw); margin: 68px 0 0 auto; }
+  .model-caption { right: 10px; bottom: 9px; font-size: .45rem; }
   .contact-section { display: block; padding: 66px 0 75px; }
   .contact-heading { margin-bottom: 48px; }
   .contact-item { grid-template-columns: 40px 1fr auto; gap: 14px; min-height: 78px; }

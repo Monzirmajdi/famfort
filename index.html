@@ -9,6 +9,13 @@
       content="FAMFORT — Global Vision, Lasting Impact. Connect with our team in Ajman Free Zone."
     />
     <title>FAMFORT — Global Vision, Lasting Impact</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+        }
+      }
+    </script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -23,7 +30,6 @@
       <main id="top">
         <section class="hero" aria-labelledby="hero-title">
           <div class="hero-copy">
-            <p class="eyebrow"><span class="eyebrow-line"></span>Global vision. Local presence.</p>
             <h1 id="hero-title">Ideas that move<br /><em>the world forward.</em></h1>
             <p class="hero-intro">
               FAMFORT brings a clear point of view, a global mindset, and the discipline to turn ambition into lasting impact.
@@ -34,12 +40,9 @@
             </a>
           </div>
 
-          <div class="hero-mark" aria-hidden="true">
-            <span class="mark-ring mark-ring-one"></span>
-            <span class="mark-ring mark-ring-two"></span>
-            <span class="mark-cross mark-cross-one"></span>
-            <span class="mark-cross mark-cross-two"></span>
-            <span class="mark-center"></span>
+          <div class="hero-mark" aria-label="FAMFORT three-dimensional icon">
+            <canvas id="icon-canvas" aria-hidden="true"></canvas>
+            <span class="model-caption">FAMFORT / FORM 01</span>
           </div>
         </section>
 
@@ -91,7 +94,7 @@
         <span>© <span id="year"></span> FAMFORT</span>
       </footer>
     </div>
-    <div class="geometric-rail" aria-hidden="true"></div>
-    <script src="./app.js"></script>
+    <img class="geometric-rail" src="assets/PATTERN-01_070037.svg" alt="" aria-hidden="true" />
+    <script type="module" src="./app.js"></script>
   </body>
 </html>
